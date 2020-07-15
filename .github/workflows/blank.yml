@@ -28,6 +28,10 @@ jobs:
     - name: "Test"
       run: |
         ls -la /__w
+        
+    - name: "Test2"
+      run: |
+        ls -la /var/www/stack
    
 #     - name: "Run [docker-compose build]"
 #       run: |
