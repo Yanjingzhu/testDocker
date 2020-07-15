@@ -20,14 +20,14 @@ jobs:
       with:
         clean: false
 
-    - name: "Test"
-      run: |
-        ls -la /__w/stack/stack
+#     - name: "Test"
+#       run: |
+#         ls -la /__w/stack/stack
    
-    - name: "Run [docker-compose build]"
-      run: |
-        docker-compose --log-level INFO up -d --build
+#     - name: "Run [docker-compose build]"
+#       run: |
+#         docker-compose --log-level INFO up -d --build
     
-    - name: "Test2"
-      run: |
-        docker-compose exec -T php sh -c "ls -all /var/www/stack"
+#     - name: "Test2"
+#       run: |
+#         docker-compose exec -T php sh -c "ls -all /var/www/stack"
