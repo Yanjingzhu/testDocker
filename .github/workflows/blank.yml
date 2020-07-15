@@ -12,18 +12,20 @@ jobs:
      
      
     steps:
-    - name: "Container prerequisites"
-      run: |
-        apk add --no-cache git
+#     - name: "Container prerequisites"
+#       run: |
+#         apk add --no-cache git
+    - name: "create file"
+      run: echo "this is a test file." > /var/www/stack/test.txt
           
-    - name: "Checkout Project"
-      uses: actions/checkout@v2
-      with:
-        clean: false
+#     - name: "Checkout Project"
+#       uses: actions/checkout@v2
+#       with:
+#         clean: false
 
-    - name: "Test"
-      run: |
-        ls -la /__w/stack/stack
+#     - name: "Test"
+#       run: |
+#         ls -la /__w/stack/stack
    
 #     - name: "Run [docker-compose build]"
 #       run: |
