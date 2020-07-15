@@ -8,7 +8,8 @@ jobs:
 
     container:
       image: docker/compose
-      options: "-v $RUNNER_WORKSPACE:\"/var/www/stack\":ro,shared"
+      options: "-v \"/home/actions-runnernico/_work\":\"/var/www/stack\":ro,shared"
+     
      
     steps:
     - name: "Container prerequisites"
@@ -20,9 +21,9 @@ jobs:
       with:
         clean: false
 
-#     - name: "Test"
-#       run: |
-#         ls -la /__w/stack/stack
+    - name: "Test"
+      run: |
+        ls -la /__w/stack/stack
    
 #     - name: "Run [docker-compose build]"
 #       run: |
