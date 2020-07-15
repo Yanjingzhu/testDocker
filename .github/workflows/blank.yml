@@ -1,0 +1,35 @@
+name: "Continuous Integration"
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pre:
+    runs-on: self-hosted
+
+    container:
+      image: docker/compose
+      options: "-v \"/home/aubiplus/actions-runner/_work\":\"/var/www/stack\":ro,shared"
+     
+    steps:
+    - name: "Container prerequisites"
+      run: |
+        apk add --no-cache git
+          
+    - name: "Checkout Project"
+      uses: actions/checkout@v2
+      with:
+        clean: false
+
+    - name: "Test"
+      run: |
+        ls -la /__w/stack/stack
+   
+    - name: "Run [docker-compose build]"
+      run: |
+        docker-compose --log-level INFO up -d --build
+    
+    - name: "Test2"
+      run: |
+        docker-compose exec -T php sh -c "ls -all /var/www/stack"
