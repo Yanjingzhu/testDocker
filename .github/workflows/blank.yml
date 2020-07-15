@@ -8,7 +8,7 @@ jobs:
 
     container:
       image: docker/compose
-      options: "-v \"/home/actions-runnernico/_work\":\"~/var/www/stack\":ro,shared"
+      options: "-v \"/home/actions-runnernico/_work\":\"/var/www/stack\":ro,shared"
      
      
     steps:
@@ -16,7 +16,9 @@ jobs:
 #       run: |
 #         apk add --no-cache git
     - name: "create file"
-      run: echo "this is a test file." > ~/var/www/stack/test.txt
+      run: |
+        mkdir -p /var/www/stack
+        echo "this is a test file." > /var/www/stack/test.txt
           
 #     - name: "Checkout Project"
 #       uses: actions/checkout@v2
