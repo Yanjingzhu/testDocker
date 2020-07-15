@@ -1,5 +1,3 @@
-name: "Continuous Integration"
-
 on:
   pull_request:
     types: [opened, synchronize]
@@ -10,7 +8,7 @@ jobs:
 
     container:
       image: docker/compose
-#       options: "-v \"/home/aubiplus/actions-runner/_work\":\"/var/www/stack\":ro,shared"
+      options: "-v \"/home/aubiplus/actions-runner/_work\":\"/var/www/stack\":ro,shared"
      
     steps:
     - name: "Container prerequisites"
