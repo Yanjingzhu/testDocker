@@ -6,7 +6,9 @@ jobs:
 
     container:
       image: docker/compose
-      options: "-v \"/home/actions-runnernico/_work\":\"/var/www/stack\":ro,shared"
+#       options: "-v \"/home/actions-runnernico/_work\":\"/var/www/stack\":ro,shared"
+      volumes: 
+        - /home/actions-runnernico/_work:/var/www/stack
      
      
     steps:
