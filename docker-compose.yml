@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  php:
+    container_name: stack_php_1
+    build: ./docker/php
+    networks:
+      - development
+    volumes:
+      - "phpsocket:/run/php"
+    environment:
+      - TZ=Europe/Berlin
+
+networks:
+  development:
+
+volumes:
+  phpsocket:
