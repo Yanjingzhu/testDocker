@@ -15,19 +15,19 @@ jobs:
 #     - name: "Container prerequisites"
 #       run: |
 #         apk add --no-cache git
-    - name: "create file"
-      run: |
-        mkdir -p /var/www/stack
-        echo "this is a test file." > /var/www/stack/test.txt
-          
-#     - name: "Checkout Project"
-#       uses: actions/checkout@v2
-#       with:
-#         clean: false
-
-#     - name: "Test"
+#     - name: "create file"
 #       run: |
-#         ls -la /__w/stack/stack
+#         mkdir -p /var/www/stack
+#         echo "this is a test file." > /var/www/stack/test.txt
+          
+    - name: "Checkout Project"
+      uses: actions/checkout@v2
+      with:
+        clean: false
+
+    - name: "Test"
+      run: |
+        ls -la /__w/testDocker/testDocker
    
 #     - name: "Run [docker-compose build]"
 #       run: |
